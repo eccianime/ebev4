@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta http-equiv="Content-Security-Policy" content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval';script-src * data: blob: 'unsafe-inline' 'unsafe-eval'; connect-src * data: blob: 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src * data: blob: ; style-src * data: blob: 'unsafe-inline';font-src * data: blob: 'unsafe-inline';" />
+
+	<title>EBE Tracking</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/flexboxgrid.min.css">
+	<link rel="stylesheet" href="css/app.css">
+
+	<link rel="apple-touch-icon" href="img/favicon.png">
+	<link rel="icon" type="image/png" href="img/favicon.png">
+
+	<script src="js/lib/jquery.js"></script>
+	<script src="cordova.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body onload="onBodyLoad()">
+	<section data-role="page" id="home" data-theme="c" data-fullscreen=true>
+		<div data-role="header" data-position=fixed>
+			<img class="pngs" src="img/cabeza.png" width="100%">
+		</div>
+		
+		<div data-role="content" class="contenido-centrado">
+			<img src="img/saisa.png" class="logo"> 
+			<br/>
+			<a href="tpl/login.html" data-role=button class="ui-btn-inline boton-verde">INICIO DE SESIÓN</a>
+			<a href="#" data-role=button class="ui-btn-inline boton-verde">SOLICITAR SERVICIO</a>
+			<br><span id="con"></span>
+			<br><span id="hora"></span>
+			<br><span id="empieza"></span>
+			<br/>
+		</div>
+		
+		<div data-role="footer" data-position=fixed>
+			<img class="pngs" src="img/pie.png" width="100%">
+		</div>
+	</section>
+</body>
+
+</html>
