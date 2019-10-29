@@ -6,12 +6,12 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>ebetracking</name>
+    <name>EBE TRACKING V4</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Herramienta para reducir el uso de papel.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="ingjeanpaulrojas@gmail.com.com" href="http://ingjprojas.zz.com.ve">
+        Ing. Jean Paul Iván Rojas Véliz
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -22,5 +22,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="fullscreen" value="true" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
     <preference name="android-minSdkVersion" value="14" />
 </widget>

@@ -12,11 +12,20 @@ function entrar( datos ) {
 	}	
 }
 
+function errorLogin() {
+	$.mobile.changePage("mensajes/connectError.html");
+}
+
 $("#boton-login").on("click", function(e) {
 	var usr = {
 		nick: $("[name=tx_email]").val(),
 		pass: $("[name=tx_pass]").val()
-	}	
-	var url = "?accion=entrar&tx_email="+usr.nick+"&tx_pass="+usr.pass;
-	CORS( url, "entrar" );
+	}
+
+	if( usr.nick == "" || usr.pass == "" ){
+		$.mobile.changePage("mensajes/vaciosError.html");
+	}else{
+		var url = "?accion=entrar&tx_email="+usr.nick+"&tx_pass="+usr.pass;
+		CORS( url, "entrar", errorLogin );
+	}
 })
