@@ -1,27 +1,23 @@
 /*
-
 	COLORES
-	GRIS CLARO
-		rgb(242,242,242)
-	VERDE OSCURO	
-		rgb(31,139,0)
-
-	VERDE CLARO
-		rgb(90,177,20)
-
-	NARANJA
-		rgb(244,141,40)
-
-
+	GRIS CLARO				rgb(242,242,242)
+	VERDE OSCURO			rgb(31,139,0)
+	VERDE CLARO				rgb(90,177,20)
+	NARANJA					rgb(244,141,40)
 */
 
 @font-face{
-	font-family: 'Ubuntu Regular';
+	font-family: 'Roboto';
 	src: url("../fonts/Roboto-Medium.ttf");
 }
 
+@font-face{
+	font-family: 'Megan June';
+	src: url("../fonts/Megan June.otf");
+}
+
 *{
-	font-family: "Ubuntu Regular" !important;
+	font-family: "Roboto" !important;
 }
 
 .fa{
@@ -36,7 +32,7 @@
 	background-size: 30%;
 	height: 100%;
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	z-index: 9999;
 	top: 0px;
 }
@@ -46,6 +42,23 @@
 	position: absolute;
 	top: 40%;
 	left: 20%;
+}
+
+.mid-transp{
+	background-color: rgba( 255, 255, 255, .5 );
+}
+
+.ui-popup-screen.in {
+	background-color: black;
+}
+
+.ui-popup {
+	background-color: white;
+}
+
+.ui-popup.ui-body-inherit {
+	background-color: rgb(90,177,20);
+	text-align: center;
 }
 
 .ui-header{
@@ -61,17 +74,24 @@
 	border: none;
 }
 
-.ui-content{
-	background: white;
-}
-
 .img-responsive{
 	width: 100%;
 }
 
 .contenido-centrado{
 	text-align: center;
+}
+
+.pt20{
 	padding-top: 20%;
+}
+
+.pt15p{
+	padding-top: 15px;
+}
+
+.pt25p{
+	padding-top: 25px;
 }
 
 .logo{
@@ -86,7 +106,7 @@
 	font-size: 1.3em;
 }
 
-.boton-verde:focus {
+.boton-verde:focus, .boton-verde:active {
 	background-color: rgb(50,137,0);
 }
 
@@ -102,6 +122,7 @@
 
 .ui-content{
 	min-height: 100%;
+	background: white;
 }
 
 #login > .ui-content {
@@ -115,10 +136,6 @@
 .ui-header .pngs{
 	margin-top: 3em;
 	position: absolute;
-}
-
-.ui-footer .pngs{
-	margin-bottom: 3em;
 }
 
 .sin_mt{
@@ -137,11 +154,15 @@
 	padding: 0% 10%;
 }
 
-.login-box .ui-input-text input,
+ .login-box .ui-input-text input,
  .login-box .ui-input-search input {
- 	text-align: center;
-	text-transform: uppercase;
+ 	text-transform: uppercase;
+	text-align: center;
  }
+
+.login-box .ui-input-text input[type=password]{
+	text-transform: none;
+}
 
  .login-box .ui-input-text ,
  .login-box .ui-input-search {
@@ -222,10 +243,6 @@ input[name=tx_adjunto]{
 	top: -45px;
 }
 
-.ui-page .ui-footer-fixed.ui-fixed-hidden {
-    position: fixed;
-}
-
 .ui-field-contain{
 	border: none;
 	margin: .5em 0;
@@ -259,17 +276,21 @@ input[name=tx_adjunto]{
 	background-color: white;
 }
 
-.bitacora.ui-listview > li {
-	padding-top: 10px;
-	padding-bottom: 10px;
+.bitacora .ui-btn{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: normal;
 }
 
 input[type=date]{
+	padding-left: 20px;	
+}
+
+#reportes input, #repasis input, #repvis input{
 	background-color: white;
 	border-bottom: 3px solid rgb(242,242,242);
 	border-bottom-right-radius: 0px;
 	border-bottom-left-radius: 0px;
-	padding-left: 20px;	
 }
 
 .calendario{
@@ -279,4 +300,45 @@ input[type=date]{
 	top: -40px;
 	font-size: 20px;
 	max-height: 0px;
+}
+
+.ui-select>.ui-btn.ui-corner-all{
+	border-color: transparent;
+	background-color: rgb(235,235,235);
+	border-radius: .3125em;
+	box-shadow: none;
+}
+
+.ui-select span{
+	text-align: left;
+	font-weight: normal;
+	color: #aaa;
+}
+
+.negrita{
+	font-weight: bold;
+}
+
+.libros thead{
+	background-color: rgb(244,141,40);
+	text-align: center;
+}
+
+.libros tbody{
+	background-color: rgb(242,242,242);
+}
+
+.libros table{
+	border-collapse: collapse;
+	font-size: 12px;
+	width: 100%;
+}
+
+.libros td{
+	padding: 5px;
+}
+
+.tabla{
+	height: 300px;
+	overflow-y: scroll;
 }

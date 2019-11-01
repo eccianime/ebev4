@@ -1,0 +1,49 @@
+<section data-role="page" id="solicitar" data-theme="c" data-fullscreen=true>
+	<div data-role="header" data-position=fixed>
+		<img class="pngs" src="../img/cabeza.png" width="100%">
+	</div>
+	
+	<div data-role="content">
+		<div class="text-center pt20">
+			<img src="../img/saisa.png" width="60%">
+			<h4>SOLICITUD DE SERVICIO</h4>
+		</div>
+		<div class="ui-field-contain">
+			<select name="co_tipo">
+				<option value="1">Servicio 1</option>
+				<option value="2">Servicio 2</option>
+				<option value="3">Servicio 3</option>
+				<option value="4">Servicio 4</option>
+			</select>
+		</div>
+		<input type="text" name="tx_nombre" placeholder="Escriba su nombre completo">
+		<div class="row center-xs">
+			<div class="col-xs-6"><div class="box">
+				<input type="text" name="tx_correo" placeholder="Correo Electrónico">
+			</div></div>
+			<div class="col-xs-6"><div class="box">
+				<input type="text" name="tx_telefono" placeholder="Teléfono">
+			</div></div>
+		</div>
+		<div class="ui-field-contain">
+        	<textarea name="tx_descripcion" placeholder="Explique como podemos ayudarlo..."></textarea>
+    	</div>
+		<a data-role="button" class="boton-verde" onclick="SolicitarServ()" href="#">Solicitar</a>
+	</div>
+
+	<div data-role="footer" data-position=fixed>
+		<img class="pngs" src="../img/pie.png" width="100%">
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../img/home.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+		</div>
+	</div>
+	<script src="../js/solicitar.js" ></script>
+</section>
+
+
+
+

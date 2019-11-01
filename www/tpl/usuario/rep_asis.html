@@ -1,0 +1,51 @@
+<section data-role="page" id="rep_asis" data-theme="c" data-fullscreen=true>
+	<h1 class="text-center"><img src="../../img/libro_asis.png" width="40%"></h1>
+	<h3 class="text-center">Empresa: <span id=empresaAsis></span><br>Libro de Asistencias de Empleados</h3>
+	
+	<div data-role="content" class="contenido-centrado libros">
+		<div class="row center-xs">
+			<div class="col-xs-6"><div class="box">
+				<input type="date" name="desde" placeholder="Desde">
+				<label class="calendario"><i class="fa fa-calendar"></i></label>
+			</div></div>
+			<div class="col-xs-6"><div class="box">
+				<input type="date" name="hasta" placeholder="Hasta">
+				<label class="calendario"><i class="fa fa-calendar"></i></label>
+			</div></div>
+			<div class="col-xs-4"><div class="box pt15p">
+				<label>Palabra Clave</label>
+			</div></div>
+			<div class="col-xs-8"><div class="box">
+				<input type="text" name="tx_palabra_clave">
+			</div></div>
+		</div>
+
+		<div class="tabla">
+			<table><thead><tr>
+				<td>Fecha</td>
+				<td>Hora</td>
+				<td>Nombre</td>
+				<td>ID - Nick</td>
+			</tr></thead>
+			<tbody><tr>
+				<td>xx-xx-xx</td>
+				<td>xx:xx XM</td>
+				<td>xxxx xxxxxxx</td>
+				<td>xyzxyzxyz</td>
+			</tr></tbody></table>
+		</div>
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/buscar.png"></a>
+			</div></div>
+		</div>
+	</div>
+	<script src="../../js/usuario/rep_asis.js" ></script>
+</section>

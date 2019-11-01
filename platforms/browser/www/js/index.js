@@ -1,17 +1,10 @@
 function onBodyLoad() {
 	document.addEventListener("deviceready", PGcargado, false);
-	document.addEventListener("backbutton", botonAtras, false);
-}
-
-var usuario = {};
-
-function botonAtras() {
-    navigator.app.exitApp();
 }
 
 function PGcargado(){
 
-	$.mobile.defaultPageTransition = 'flip';
+	$.mobile.defaultPageTransition = 'pop';
 	$.mobile.loadingMessage = "Cargando...";
 	$.mobile.loadingMessageTextVisible = true;
 	$.mobile.loadingMessageTheme = "b";
@@ -23,9 +16,11 @@ function PGcargado(){
 	$.mobile.allowCrossDomainPages = true;
 	$.mobile.pushState = false;
 
-	setTimeout( function () {
-		$(".splash").remove();
-	}, 3000);
+	$("#modalGeneral").popup();
+
+	/*setTimeout( function () {
+		$(".splash").fadeOut().remove();
+	}, 3000);*/
 
 	setInterval( function () {
 		checkConnection();
@@ -38,7 +33,20 @@ function PGcargado(){
 		$("#hora").html(h+":"+m+":"+s);
 
 	}, 1000 );
+}
 
+var usuario = {};
+
+function abrirModal( nro, mensaje ) {
+	var color = nro == 1 ? "rgb(213,14,33)" : "rgb(90,177,20)";
+	var titulo = nro == 1 ? "<i class='fa fa-times-circle'></i> Ocurrió un Error" : "<i class='fa fa-check-circle'></i> Éxito";
+	$(".ui-popup.ui-body-inherit").css({backgroundColor:color});
+	$(".ui-popup .ui-btn").css({backgroundColor:color});
+
+	$("#tituloModal").html(titulo);
+	$("#mensajeModal").html(mensaje);
+
+	$("#modalGeneral").popup("open");
 }
 
 function checkConnection() {
@@ -58,20 +66,26 @@ function checkConnection() {
 }
 
 
-function CORS ( url, respuesta, error ) {
-	var loading = "<div class='splash'></div>";
+function CORS ( url, respuesta, error, datos ) {
+	var loading = "<div class='splash mid-transp'></div>";
 	$('[data-role=page]').append(loading);
 	$.ajax({
 		type: "GET",
-		url: "http://appevt.zz.com.ve/webservice.php"+url,
+		//url: "http://appevt.zz.com.ve/webservice.php"+url,
+		url: "http://localhost/ebetracking/webservice.php"+url,
 		dataType: "jsonp",
 		crossDomain: true,
 		jsonpCallback: respuesta,
 		error: error,
+		data: datos,
 		success: function() {
 			$(".splash").remove();	
 		}
 	});
+}
+
+function rspBase( datos ) {
+	abrirModal( datos.nro, datos.msg );	
 }
 
 function respuestaJSONP (datos) {
@@ -79,6 +93,11 @@ function respuestaJSONP (datos) {
 		$("#empieza").append("<br/><span>Índice: "+i+" - Valor: "+v+"</span>");
 	});
 }
+
+function errorConn() {
+	abrirModal( 1, "Disculpe, hubo un error al conectar. Intente nuevamente o contacte al administrador del sistema." );
+}
+
 function obtenerUbicacion () {
 	navigator.geolocation.getCurrentPosition( bien, mal );
 

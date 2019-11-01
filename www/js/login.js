@@ -3,29 +3,25 @@ function entrar( datos ) {
 	if( datos.success == true ){
 		usuario = datos.datos[0];
 		switch(usuario.co_rol){
-			case "1": 	$.mobile.changePage("super/perfil.html");	break;
-			case "2": 	$.mobile.changePage("admin/perfil.html");	break;
-			case "3": 	$.mobile.changePage("usuario/perfil.html");	break;
+			case "1": 	$.mobile.changePage("super/inicio.html");	break;
+			case "2": 	$.mobile.changePage("admin/inicio.html");	break;
+			case "3": 	$.mobile.changePage("usuario/inicio.html");	break;
 		}
 	}else{
-		$.mobile.changePage("mensajes/usuarioError.html");
+		abrirModal( 1, "Disculpe, las credenciales utilizadas son incorrectas o el usuario no existe." )
 	}	
 }
 
-function errorLogin() {
-	$.mobile.changePage("mensajes/connectError.html");
-}
-
-$("#boton-login").on("click", function(e) {
+$("#boton-login").click( function() {
 	var usr = {
-		nick: $("[name=tx_email]").val(),
-		pass: $("[name=tx_pass]").val()
+		tx_email: $("[name=tx_email]").val(),
+		tx_pass: $("[name=tx_pass]").val()
 	}
 
-	if( usr.nick == "" || usr.pass == "" ){
-		$.mobile.changePage("mensajes/vaciosError.html");
+	if( usr.tx_email == "" || usr.tx_pass == "" ){
+		abrirModal( 1, "Disculpe, no puede dejar campos vacíos." );
 	}else{
-		var url = "?accion=entrar&tx_email="+usr.nick+"&tx_pass="+usr.pass;
-		CORS( url, "entrar", errorLogin );
+		var url = "?accion=entrar";
+		CORS( url, "entrar", errorConn, usr );
 	}
 })

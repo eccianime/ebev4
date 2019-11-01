@@ -1,37 +1,52 @@
-<section data-role="page" id="perfil" data-theme="c" data-fullscreen=true>
+<section data-role="page" id="perfilUsuario" data-theme="c" data-fullscreen=true>
 	<div data-role="header" data-position=fixed>
-		<h1><img src="../../img/saisa_blanco.png" width="100%"></h1>
-		<img class="pngs sin_mt" src="../../img/cabeza.png" width="100%">
+		<img class="pngs" src="../../img/cabeza.png" width="100%">
 	</div>
 	
-	<div data-role="content" class="contenido-centrado">
-		<h1>Bienvenido, <span data-nick-perfil>Usuario</span></h1>
-		<div class="row center-xs">
-			<div class="col-xs-6">
-				<div class="box">
-					<a href="lista_sucursales.html"><img class="img-responsive" src="../../img/tracking.png"></a>
-				</div>
-			</div>
-			<div class="col-xs-6">
-				<div class="box">
-					<a href="control.html"><img class="img-responsive" src="../../img/control.png"></a>
-				</div>
-			</div>
+	<div data-role="content">
+		<div class="text-center pt25p"> 
+			<img src="../../img/saisa.png" width="60%">
+			<h4>Perfil de Usuario</h4>
 		</div>
-	</div>
-	
-	<div data-role="footer" class="menu-footer" data-position=fixed>
 		<div class="row center-xs">
-			<div class="col-xs-4"><div class="box">
-				<a href="#"><img class="img-menu-inf" src="../../img/perfil.png"></a>
+			<div class="col-xs-3 pt15p"><div class="box">
+				<label>Nombre:</label>
 			</div></div>
-			<div class="col-xs-4"><div class="box">
-				<a href="#"><img class="img-menu-inf" src="../../img/home.png"></a>
+			<div class="col-xs-9"><div class="box">
+				<input type="text" name="tx_nombre" disabled>	
 			</div></div>
-			<div class="col-xs-4"><div class="box">
-				<a href="#"><img class="img-menu-inf" src="../../img/sobre.png"></a>
+			<div class="col-xs-3 pt15p"><div class="box">
+				<label>Nick:</label>	
 			</div></div>
+			<div class="col-xs-9"><div class="box">
+				<input type="text" name="tx_nick" disabled>	
+			</div></div>
+			<div class="col-xs-3 pt15p"><div class="box">
+				<label>ID.:</label>	
+			</div></div>
+			<div class="col-xs-9"><div class="box">
+				<input type="text" name="co_usuario" disabled>	
+			</div></div>
+		</div>
+		<h4 class="text-center">Actualizar Contraseña</h4>
+		<input type="password" name="tx_pass_nueva" placeholder="Escriba la Nueva Contraseña">
+		<input type="password" name="tx_pass_nueva_2" placeholder="Repita la Contraseña">
+		<a data-role="button" onclick="actulizarPass()" class="boton-verde" href="#">Actualizar</a>
+	</div>
+
+	<div data-role="footer" data-position=fixed>
+		<img class="pngs" src="../../img/pie.png" width="100%">
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/home.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
 		</div>
 	</div>
 	<script src="../../js/usuario/perfil.js" ></script>
 </section>
+
+
+
+

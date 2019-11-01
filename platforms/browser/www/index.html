@@ -19,24 +19,33 @@
 	<link rel="apple-touch-icon" href="img/favicon.png">
 	<link rel="icon" type="image/png" href="img/favicon.png">
 
-	<script src="js/lib/jquery.js"></script>
+	<script src="js/lib/jquery.min.js"></script>
 	<script src="cordova.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
 </head>
 
 <body onload="onBodyLoad()">
+	<section data-role="popup" data-close-btn="none" id=modalGeneral data-transition=pop data-dismissible="false">
+		<div data-role="header">
+			<h1 class="titulo-blanco" id=tituloModal></h1>
+		</div>
+		<div class="ui-content text-center">
+			<p id=mensajeModal></p>
+			<a href="#" class="ui-btn ui-btn-raised ui-btn-inline boton-verde" data-role="button" data-rel=back role="button"><i class="fa fa-ok"></i> Volver</a>
+		</div>
+	</section>
 	<section data-role="page" id="home" data-theme="c" data-fullscreen=true>
-        <div class='splash'></div>
+        <!-- <div class='splash'></div> -->
 		<div data-role="header" data-position=fixed>
 			<img class="pngs" src="img/cabeza.png" width="100%">
 		</div>
 		
-		<div data-role="content" class="contenido-centrado">
+		<div data-role="content" class="contenido-centrado pt20">
 			<img src="img/saisa.png" class="logo"> 
 			<br/>
 			<a href="tpl/login.html" data-role=button class="ui-btn-inline boton-verde">INICIO DE SESIÓN</a>
-			<a href="#" data-role=button class="ui-btn-inline boton-verde">SOLICITAR SERVICIO</a>
+			<a href="tpl/solicitar.html" data-role=button class="ui-btn-inline boton-verde">SOLICITAR SERVICIO</a>
 			<br><span id="con"></span><br><span id="hora"></span>
 			<br/>
 		</div>
