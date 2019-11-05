@@ -34,9 +34,6 @@
     "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "com.ebetracking.appv4"
     },
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.ebetracking.appv4"
-    },
     "cordova-plugin-globalization": {
       "PACKAGE_NAME": "com.ebetracking.appv4"
     },
@@ -56,6 +53,9 @@
       "PACKAGE_NAME": "com.ebetracking.appv4"
     },
     "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ebetracking.appv4"
+    },
+    "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.ebetracking.appv4"
     }
   },

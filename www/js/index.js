@@ -18,9 +18,9 @@ function PGcargado(){
 
 	$("#modalGeneral").popup();
 
-	/*setTimeout( function () {
+	setTimeout( function () {
 		$(".splash").fadeOut().remove();
-	}, 3000);*/
+	}, 3000);
 
 	setInterval( function () {
 		checkConnection();
@@ -36,10 +36,13 @@ function PGcargado(){
 }
 
 var usuario = {};
+const URL_BASE = "http://appevt.zz.com.ve/webservice.php";
+//url: "http://appevt.zz.com.ve/webservice.php"
+//url: "http://localhost/ebetracking/webservice.php"
 
 function abrirModal( nro, mensaje ) {
-	var color = nro == 1 ? "rgb(213,14,33)" : "rgb(90,177,20)";
-	var titulo = nro == 1 ? "<i class='fa fa-times-circle'></i> Ocurrió un Error" : "<i class='fa fa-check-circle'></i> Éxito";
+	var color = nro == 1 ? "rgb(213,14,33)" : ( nro == 2 ? "rgb(90,177,20)" : "rgb(255,168,0)" ) ;
+	var titulo = nro == 1 ? "<i class='fa fa-times-circle'></i> Ocurrió un Error" : ( nro == 2 ? "<i class='fa fa-check-circle'></i> Éxito" : "<i class='fa fa-warning'></i> Información" );
 	$(".ui-popup.ui-body-inherit").css({backgroundColor:color});
 	$(".ui-popup .ui-btn").css({backgroundColor:color});
 
@@ -47,6 +50,69 @@ function abrirModal( nro, mensaje ) {
 	$("#mensajeModal").html(mensaje);
 
 	$("#modalGeneral").popup("open");
+}
+
+function mostrarCargando() {
+	var loading = "<div class='splash mid-transp'></div>";
+	$('[data-role=page]').append(loading);
+}
+
+function quitarCargando() {
+	$(".splash").remove();
+}
+
+function CORS ( url, respuesta, error, datos) {
+	mostrarCargando();
+	$.ajax({
+		type: "GET",
+		url: url,
+		dataType: "jsonp",
+		crossDomain: true,
+		jsonpCallback: respuesta,
+		error: error,
+		data: datos,
+	}).done(function () {
+		quitarCargando();
+	});
+}
+
+function rspBase( datos ) {
+	abrirModal( datos.nro, datos.msg );	
+}
+
+function errorConn() {
+	$(".splash").remove();
+	abrirModal( 1, "Disculpe, hubo un error al conectar. Intente nuevamente o contacte al administrador del sistema." );
+}
+
+function obtenerUbicacion( quien_ocultar, name_campo ) {
+	$(quien_ocultar).append( "<div class=overlay><span style=padding-top:80px>Cargando Ubicación...</span></div>" );
+	navigator.geolocation.getCurrentPosition( exito, error );
+
+	function exito ( pos ) {
+		$(name_campo).val( pos.coords.latitude + "/" + pos.coords.longitude );
+		$(".overlay").remove();
+	};
+
+	function error (error) {
+		var errC;
+		switch(error.code.toString()){
+			case "1":
+				errC = "PERMISO DENEGADO";
+			break;
+			case "2":
+				errC = "NO DISPONIBLE";
+			break;
+			case "3":
+				errC = "TIEMPO DE RESPUESTA AGOTADO";
+			break;
+			default:
+				errC = "ERROR DESCONOCIDO";
+			break;
+		}
+		abrirModal( 1, errC+". Por favor, cierre la aplicación y ábrala nuevamente." );
+		$(".overlay").remove();
+	}
 }
 
 function checkConnection() {
@@ -63,72 +129,4 @@ function checkConnection() {
     states[Connection.NONE]     = 'No network connection';
 
     $("#con").html(states[networkState]);
-}
-
-
-function CORS ( url, respuesta, error, datos ) {
-	var loading = "<div class='splash mid-transp'></div>";
-	$('[data-role=page]').append(loading);
-	$.ajax({
-		type: "GET",
-		//url: "http://appevt.zz.com.ve/webservice.php"+url,
-		url: "http://localhost/ebetracking/webservice.php"+url,
-		dataType: "jsonp",
-		crossDomain: true,
-		jsonpCallback: respuesta,
-		error: error,
-		data: datos,
-		success: function() {
-			$(".splash").remove();	
-		}
-	});
-}
-
-function rspBase( datos ) {
-	abrirModal( datos.nro, datos.msg );	
-}
-
-function respuestaJSONP (datos) {
-	$.each(datos,function (i, v) {
-		$("#empieza").append("<br/><span>Índice: "+i+" - Valor: "+v+"</span>");
-	});
-}
-
-function errorConn() {
-	abrirModal( 1, "Disculpe, hubo un error al conectar. Intente nuevamente o contacte al administrador del sistema." );
-}
-
-function obtenerUbicacion () {
-	navigator.geolocation.getCurrentPosition( bien, mal );
-
-	function bien (posi) {
-		$("#lati").html(posi.coords.latitude);
-		$("#longi").html(posi.coords.longitude);
-		$("#alti").html(posi.coords.altitude);
-	};
-
-	function mal (error) {
-		switch(error.code.toString()){
-			case "1":
-				$("#lati").html("PERMISO DENEGADO");
-				$("#longi").html("PERMISO DENEGADO");
-				$("#alti").html("PERMISO DENEGADO");
-			break;
-			case "2":
-				$("#lati").html("NO DISPONIBLE");
-				$("#longi").html("NO DISPONIBLE");
-				$("#alti").html("NO DISPONIBLE");
-			break;
-			case "3":
-				$("#lati").html("TIEMPO DE RESPUESTA AGOTADO");
-				$("#longi").html("TIEMPO DE RESPUESTA AGOTADO");
-				$("#alti").html("TIEMPO DE RESPUESTA AGOTADO");
-			break;
-			default:
-				$("#lati").html("ERROR DESCONOCIDO");
-				$("#longi").html("ERROR DESCONOCIDO");
-				$("#alti").html("ERROR DESCONOCIDO");
-			break;
-		}
-	}
 }

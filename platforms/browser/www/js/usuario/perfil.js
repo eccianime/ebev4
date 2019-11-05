@@ -9,10 +9,16 @@ function actulizarPass() {
 	}
 
 	if( pass.tx_pass_nueva == "" || pass.tx_pass_nueva_2 == "" ){
-		$.mobile.changePage("../../tpl/mensajes/vaciosError.html");
+		abrirModal( 1, "Disculpe, no puede dejar campos vacíos." );
 	}else if( pass.tx_pass_nueva != pass.tx_pass_nueva_2 ){
-		$.mobile.changePage("../../tpl/mensajes/passError.html");
+		abrirModal( 1, "Disculpe, las contraseñas no coinciden." );
 	}else{
-		//CORS( "?accion=cambiarPass", "cambiarPass", errorLogin, pass.tx_pass_nueva );
+
+		var usr = {
+			co_usuario: usuario.co_usuario,
+			tx_pass: pass.tx_pass_nueva
+		}
+
+		CORS( URL_BASE+"?accion=cambiarPass", "rspBase", errorConn, usr );
 	}
 }

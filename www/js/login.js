@@ -1,3 +1,17 @@
+$("#boton-login").click( function() {
+	var usr = {
+		tx_email: $("[name=tx_email]").val(),
+		tx_pass: $("[name=tx_pass]").val()
+	}
+
+	if( usr.tx_email == "" || usr.tx_pass == "" ){
+		abrirModal( 1, "Disculpe, no puede dejar campos vacíos." );
+	}else{
+		var url = "?accion=entrar";
+		CORS( URL_BASE+url, "entrar", errorConn, usr );
+	}
+})
+
 function entrar( datos ) {
 
 	if( datos.success == true ){
@@ -11,17 +25,3 @@ function entrar( datos ) {
 		abrirModal( 1, "Disculpe, las credenciales utilizadas son incorrectas o el usuario no existe." )
 	}	
 }
-
-$("#boton-login").click( function() {
-	var usr = {
-		tx_email: $("[name=tx_email]").val(),
-		tx_pass: $("[name=tx_pass]").val()
-	}
-
-	if( usr.tx_email == "" || usr.tx_pass == "" ){
-		abrirModal( 1, "Disculpe, no puede dejar campos vacíos." );
-	}else{
-		var url = "?accion=entrar";
-		CORS( url, "entrar", errorConn, usr );
-	}
-})

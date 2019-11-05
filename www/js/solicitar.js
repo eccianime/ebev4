@@ -16,6 +16,6 @@ function SolicitarServ() {
 		abrirModal( 1, "Disculpe, no puede dejar campos vacíos." );
 	}else{
 		var url = "?accion=solicitarserv";
-		CORS( url, "rspBase", errorConn, datos );
+		CORS( URL_BASE+url, "rspBase", errorConn, datos );
 	}
 }

@@ -10,7 +10,6 @@
     "cordova-plugin-dialogs": "~1.2.0",
     "cordova-plugin-file": "~4.1.1",
     "cordova-plugin-file-transfer": "~1.5.0",
-    "cordova-plugin-geolocation": "~2.1.0",
     "cordova-plugin-globalization": "~1.0.3",
     "cordova-plugin-inappbrowser": "~1.3.0",
     "cordova-plugin-media": "~2.2.0",
@@ -32,19 +31,20 @@
       "cordova-plugin-dialogs": {},
       "cordova-plugin-file": {},
       "cordova-plugin-file-transfer": {},
-      "cordova-plugin-geolocation": {},
       "cordova-plugin-globalization": {},
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-media": {},
       "cordova-plugin-network-information": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-geolocation": {}
     },
     "platforms": [
       "browser"
     ]
   },
   "dependencies": {
-    "cordova-browser": "^6.0.0"
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-geolocation": "4.0.2"
   }
 }

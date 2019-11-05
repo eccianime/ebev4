@@ -3,15 +3,24 @@
 	<h1 class="text-center">Registro</h1>
 	
 	<div data-role="content" class="contenido-centrado">
-		<div class="ui-field-contain">
-        	<textarea name="tx_descripcion" placeholder="Contenido..."></textarea>
-    	</div>
-		<input type="file" name="tx_adjunto" class="camp-var">
-		<input type="text" name="nu_lat_lng" class="camp-var">
-		<input type="text" placeholder="Firma o Recibido">
-		<label class="label-extra tx_adjunto"><i class="fa fa-camera color-black"></i> Adjuntar Imagen</label>
-		<label class="label-extra nu_lat_lng"><i class="fa fa-map color-black"></i> Ubicación</label>
-		<a data-role="button" class="boton-verde" href="#">Enviar</a>
+		<form class="caja" action="#" enctype="multipart/form-data">
+			<div class="ui-field-contain">
+	        	<textarea name="tx_descripcion" placeholder="Contenido..."></textarea>
+	    	</div>
+	    	<div class="input-agrupado">
+	    		<span class="fa fa-camera"></span>
+	    		<input type="file" name="tx_adjunto" id=tx_adjunto style="display: none" accept="image/*">
+	    		<label for="tx_adjunto">Imagen de Evento</label>
+	    	</div>
+	    	<div class="input-agrupado">
+	    		<span class="fa fa-map"></span>
+	    		<input type="text" name="nu_lat_lng" readonly="true" placeholder="Ubicación">
+	    	</div>
+    		<label for="url_img_firma">Imagen de Firma</label>
+    		<input type="file" name="url_img_firma" id="url_img_firma" style="display: none" placeholder="Firma o Recibido" accept="image/*">
+	    	<input type="text" data-co_sucursal style="display: none;">
+			<a data-role="button" class="boton-verde" href="#" onclick="registro()">Enviar</a>
+		</form>
 	</div>
 	
 	<div data-role="footer" class="menu-footer" data-position=fixed>

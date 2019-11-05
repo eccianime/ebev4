@@ -13,6 +13,12 @@ function actulizarPass() {
 	}else if( pass.tx_pass_nueva != pass.tx_pass_nueva_2 ){
 		abrirModal( 1, "Disculpe, las contraseñas no coinciden." );
 	}else{
-		//CORS( "?accion=cambiarPass", "cambiarPass", errorLogin, pass.tx_pass_nueva );
+
+		var usr = {
+			co_usuario: usuario.co_usuario,
+			tx_pass: pass.tx_pass_nueva
+		}
+
+		CORS( URL_BASE+"?accion=cambiarPass", "rspBase", errorConn, usr );
 	}
 }
