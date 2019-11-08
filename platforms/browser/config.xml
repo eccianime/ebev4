@@ -8,6 +8,7 @@
         Ing. Jean Paul Iván Rojas Véliz
     </author>
     <content src="index.html" />
+    <icon src="www/img/favicon.png" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

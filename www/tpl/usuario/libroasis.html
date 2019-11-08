@@ -1,6 +1,12 @@
 <section data-role="page" id="libroasis" data-theme="c" data-fullscreen=true>
-	<h1 class="text-center"><img src="../../img/libro_asis.png" width="40%"></h1>
-	<h3 class="text-center">Empresa: <span id=empresaAsis></span><br>Libro de Asistencias de Empleados</h3>
+	<div class="text-center caja-cabecera">
+		<h1><img src="../../img/libro_asis.png" width="40%"></h1>
+		<h3>Libro de Asistencias de Empleados</h3>
+		<div class="mb-20p">
+			Empresa: <span data-empresa></span><br>
+			Sucursal: <span data-sucursal></span>
+		</div>
+	</div>
 	
 	<div data-role="content" class="contenido-centrado libros">
 		<div class="tabla">
@@ -10,12 +16,7 @@
 				<td>Nombre</td>
 				<td>ID - Nick</td>
 			</tr></thead>
-			<tbody><tr>
-				<td>xx-xx-xx</td>
-				<td>xx:xx XM</td>
-				<td>xxxx xxxxxxx</td>
-				<td>xyzxyzxyz</td>
-			</tr></tbody></table>
+			<tbody class="tabla-asis"></tbody></table>
 		</div>
 	</div>
 	

@@ -18,9 +18,9 @@ function PGcargado(){
 
 	$("#modalGeneral").popup();
 
-	/*setTimeout( function () {
+	setTimeout( function () {
 		$(".splash").fadeOut().remove();
-	}, 3000);*/
+	}, 3000);
 
 	setInterval( function () {
 		checkConnection();
@@ -36,11 +36,10 @@ function PGcargado(){
 }
 
 var usuario = {};
+//const URL_BASE = "http://appevt.zz.com.ve/webservice.php";
 const URL_BASE = "http://localhost/ebetracking/webservice.php";
-//url: "http://appevt.zz.com.ve/webservice.php"+url,
-//url: "http://localhost/ebetracking/webservice.php"+url,
 
-function abrirModal( nro, mensaje ) {
+function abrirModal( nro, mensaje, regresar = null ) {
 	var color = nro == 1 ? "rgb(213,14,33)" : ( nro == 2 ? "rgb(90,177,20)" : "rgb(255,168,0)" ) ;
 	var titulo = nro == 1 ? "<i class='fa fa-times-circle'></i> Ocurrió un Error" : ( nro == 2 ? "<i class='fa fa-check-circle'></i> Éxito" : "<i class='fa fa-warning'></i> Información" );
 	$(".ui-popup.ui-body-inherit").css({backgroundColor:color});
@@ -48,6 +47,14 @@ function abrirModal( nro, mensaje ) {
 
 	$("#tituloModal").html(titulo);
 	$("#mensajeModal").html(mensaje);
+
+	if( regresar != null ){
+		$("#botonAtrasModal").attr('data-rel',"");
+		$("#botonAtrasModal").attr('onclick', 'window.history.back();window.history.back();' );
+	}else{
+		$("#botonAtrasModal").attr('data-rel',"back");
+		$("#botonAtrasModal").attr('onclick', "" );
+	}
 
 	$("#modalGeneral").popup("open");
 }
@@ -77,7 +84,7 @@ function CORS ( url, respuesta, error, datos) {
 }
 
 function rspBase( datos ) {
-	abrirModal( datos.nro, datos.msg );	
+	abrirModal( datos.nro, datos.msg, datos.reg );	
 }
 
 function errorConn() {

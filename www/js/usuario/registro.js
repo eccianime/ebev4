@@ -59,56 +59,18 @@ function registro() {
 							var resp = $.parseJSON( xhr.responseText );
 							quitarCargando();
 							if( resp.success == true ){
-								abrirModal(2, "salio bien");
+								abrirModal(2, "Se realizó el registro de forma exitósa.", 1);
 							}else{
-								abrirModal(2, "salio mal2");
+								abrirModal(2, "Ocurrió un problema, informe al administrador el CODIGO ERR0001");
 							}
 						}
 					});	
 				}else{
 					quitarCargando();	
-					abrirModal(1, "salio mal1");
+					abrirModal(2, "Ocurrió un problema, informe al administrador el CODIGO ERR0002");
 				}
 			},
 		});
-
-
-		    /*var file_id = "[name=tx_adjunto]";
-		    var file_name_arr = new Array();
-		    var process_path = 'public/uploads/';
-
-		    for (i = 0; i < $(file_id).prop("files").length; i++) {
-
-		        var form_data = new FormData();
-		        var file_data = $(file_id).prop("files")[i];
-		        form_data.append("file_name", file_data);
-
-	            $.ajax({
-	                cache: false,
-	                contentType: false,
-	                processData: false,
-	                async: false,
-	                data: form_data,
-	                type: 'post',
-	                url: "http://localhost/ebetracking/webservice.php?accion=subirImagen",
-					dataType: "jsonp",
-					crossDomain: true,
-					jsonpCallback: 'funciono',
-	            });
-
-		    }*/
-
-		/*$.ajax({
-			type: "POST",
-			//url: "http://appevt.zz.com.ve/webservice.php"+url,
-			url: "http://localhost/ebetracking/webservice.php?accion=registro",
-			data: {
-
-			},			
-			dataType: "jsonp",
-			crossDomain: true,
-			jsonpCallback: respuesta,
-		});*/
 	}
 
 }

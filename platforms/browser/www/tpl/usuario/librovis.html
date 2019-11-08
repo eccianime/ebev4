@@ -1,6 +1,12 @@
 <section data-role="page" id="librovis" data-theme="c" data-fullscreen=true>
-	<h1 class="text-center"><img src="../../img/libro_vis.png" width="40%"></h1>
-	<h3 class="text-center">Empresa: <span id=empresaVis></span><br>Libro de Visitas</h3>
+	<div class="text-center caja-cabecera">
+		<h1><img src="../../img/libro_vis.png" width="40%"></h1>
+		<h3>Libro de Visitas</h3>
+		<div class="mb-20p">
+			Empresa: <span data-empresa></span><br>
+			Sucursal: <span data-sucursal></span>
+		</div>
+	</div>
 	
 	<div data-role="content" class="contenido-centrado libros">
 		<div class="tabla">
@@ -12,14 +18,7 @@
 				<td>Empresa</td>
 				<td>Destino</td>
 			</tr></thead>
-			<tbody><tr>
-				<td>xx-xx-xx</td>
-				<td>xx:xx XM</td>
-				<td>xxxx xxxxxxx</td>
-				<td>xyzxyzxyz</td>
-				<td>xyzxyzxyz</td>
-				<td>xyzxyzxyz</td>
-			</tr></tbody></table>
+			<tbody class="tabla-vis"></tbody></table>
 		</div>
 	</div>
 	

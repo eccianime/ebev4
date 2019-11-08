@@ -6,7 +6,13 @@
   "version": "com.ebetracking.appv4",
   "description": "Herramienta para reducir el uso de papel.",
   "author": "Ing. Jean Paul Iván Rojas Véliz",
-  "icons": [],
+  "icons": [
+    {
+      "src": "www/img/favicon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
   "orientation": "portrait",
   "start_url": "index.html"
 }

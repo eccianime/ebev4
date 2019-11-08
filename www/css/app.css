@@ -346,6 +346,7 @@ input[type=date]{
 }
 
 .caja-lista{
+	height: 300px;
 	display: inline-block;
 	margin: -1em;
 	overflow-y: scroll;
@@ -382,6 +383,24 @@ input[type=date]{
 	border: none;
 }
 
+.agrup-tipo-2 span{
+	border-top-right-radius: .3125em;
+	border-bottom-right-radius: .3125em;	
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.agrup-tipo-2 .ui-input-text{
+	border-top-left-radius: .3125em;
+	border-bottom-left-radius: .3125em;	
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.buscador-link{
+	cursor: pointer;
+}
+
 .input-agrupado label[for=tx_adjunto], label[for=url_img_firma] {
 	background-color: rgb(235,235,235);
 	color: #ccc;
@@ -408,4 +427,11 @@ input[type=date]{
 	align-items: center;
     display: grid;
 }
+
+label{
+	border-radius: .3125em;
+}
+
+.tabla-vis td, .tabla-asis td{
+	white-space: nowrap;
 }

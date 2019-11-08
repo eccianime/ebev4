@@ -3,14 +3,23 @@
 	<h3 class="text-center">Registro de Asistencia<br>de Empleados</h3>
 	
 	<div data-role="content" class="contenido-centrado libros">
-		<input type="text" name="tx_nick" placeholder="ID de Usuario o Nick">
-		<input type="text" name="tx_pnombre" placeholder="Primer Nombre" readonly>
-		<input type="text" name="tx_snombre" placeholder="Segundo Nombre" readonly>
-		<input type="text" name="tx_papellido" placeholder="Primer Apellido" readonly>
-		<input type="text" name="tx_sapellido" placeholder="Segundo Apellido" readonly>
+
+		<p class="text-center">Ingresa la ID o el nick del usuario y presiona <i class="fa fa-search"></i>, los datos serán llenados automáticamente. No olvide ingresar la firma.</p>
+		<div class="input-agrupado agrup-tipo-2">
+    		<input type="text" name="tx_nick" placeholder="ID de Usuario o Nick">
+    	 	<span class="fa fa-search buscador-link" onclick="buscarUsuario()"></span>
+    	</div>
+		<input type="text" name="tx_nombre" placeholder="Primer Nombre" readonly>
+		<input type="text" name="tx_nombre_2" placeholder="Segundo Nombre" readonly>
+		<input type="text" name="tx_apellido" placeholder="Primer Apellido" readonly>
+		<input type="text" name="tx_apellido_2" placeholder="Segundo Apellido" readonly>
 		<input type="text" name="tx_cedula" placeholder="Ced. Identidad" readonly>
-		<input type="text" name="tx_firma" placeholder="Firma">
-		<a data-role="button" class="boton-verde" href="#">Ingresar</a>
+		<label for="url_img_firma">Imagen de Firma</label>
+		<input type="file" name="url_img_firma" id="url_img_firma" style="display: none" placeholder="Firma o Recibido" accept="image/*">
+    	<input type="text" data-co_sucursal style="display: none;">
+		<input type="text" name="co_usuario" style="display: none;">
+		<a data-role="button" class="boton-verde" href="#" onclick="registroAsis()">Ingresar</a>
+		<a data-role="button" class="boton-verde" href="#" onclick="resetCampos()">Resetear</a>
 	</div>
 	
 	<div data-role="footer" class="menu-footer" data-position=fixed>
