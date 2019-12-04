@@ -1,5 +1,7 @@
-CORS( URL_BASE+"?accion=verEmpresaSucursal", "llenarEmpresaSucursal", errorConn, usuario );
-CORS( URL_BASE+"?accion=verBitacora", "vistaBitacora", errorConn, usuario );
+var libro = {};
+
+AJAX( "verEmpresaSucursal", llenarEmpresaSucursal, errorConn, usuario );
+AJAX( "verBitacora", vistaBitacora, errorConn, usuario );
 
 function vistaBitacora( datos ) {
 	if( datos.filas == 0 ){
@@ -33,7 +35,7 @@ function vistaBitacora( datos ) {
 				mi 		= fecha.getMinutes();
 
 			html += "\
-			<li data-icon=plus><a class='ui-btn ui-btn-icon-right ui-icon-plus lista-justificado' href='notas.html'>\
+			<li data-icon=plus data-libro="+a[i]['co_libro']+"><a class='ui-btn ui-btn-icon-right ui-icon-plus lista-justificado' href='#'>\
 				<span class='negrita'>FECHA: "+d+"/"+m+"/"+y+" <br>\
 				NOVEDAD: "+a[i]['co_libro']+"<br>\
 				HORA: "+h+":"+mi+"<br><br></span>\
@@ -42,6 +44,9 @@ function vistaBitacora( datos ) {
 			";
 		});
 		$(".bitacora").append(html);
+		$("[data-libro]").click( function() {
+			libro.co_libro = $(this).attr("data-libro");
+			$.mobile.changePage( 'notas.html' );
+		})
 	}
 }
-

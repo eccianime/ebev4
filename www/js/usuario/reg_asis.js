@@ -1,4 +1,4 @@
-CORS( URL_BASE+"?accion=verEmpresaSucursal", "llenarEmpresaSucursal", errorConn, usuario );
+AJAX( "verEmpresaSucursal", llenarEmpresaSucursal, errorConn, usuario );
 
 $("[type=file]").change(function() {
 	var v = $(this).prop("files")[0]['name'];
@@ -17,7 +17,7 @@ function buscarUsuario() {
 	if( u.co_usuario == "" ){
 		abrirModal(1, "Primero escriba la ID o el nick del usuario.");
 	}else{
-		CORS( URL_BASE+"?accion=buscarUsuario", "llenarUsuario", errorConn, u );	
+		AJAX( "buscarUsuario", llenarUsuario, errorConn, u );	
 	}
 }
 
@@ -56,7 +56,7 @@ function registroAsis() {
 
 		$.ajax({
 			type: 'post',
-			url: URL_BASE+"?accion=registroLibroAsis",
+			url: URL_BASE+"registroLibroAsis",
 			contentType: false,
 			enctype: 'multipart/form-data',
 			processData: false,

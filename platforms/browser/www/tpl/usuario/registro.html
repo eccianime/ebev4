@@ -16,10 +16,12 @@
 	    		<span class="fa fa-map"></span>
 	    		<input type="text" name="nu_lat_lng" readonly="true" placeholder="Ubicación">
 	    	</div>
-    		<label for="url_img_firma">Imagen de Firma</label>
-    		<input type="file" name="url_img_firma" id="url_img_firma" style="display: none" placeholder="Firma o Recibido" accept="image/*">
+	    	<p>Por favor, registre su firma en el siguiente cuadro.</p>
+	    	<canvas width="300px" height="300px" name=lienzo></canvas>
+    		
 	    	<input type="text" data-co_sucursal style="display: none;">
 			<a data-role="button" class="boton-verde" href="#" onclick="registro()">Enviar</a>
+			<a data-role="button" class="boton-verde" href="#" onclick="limpiarCanvas()">Limpiar Firma</a>
 		</form>
 	</div>
 	

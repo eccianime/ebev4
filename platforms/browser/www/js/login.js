@@ -7,13 +7,11 @@ $("#boton-login").click( function() {
 	if( usr.tx_email == "" || usr.tx_pass == "" ){
 		abrirModal( 1, "Disculpe, no puede dejar campos vacíos." );
 	}else{
-		var url = "?accion=entrar";
-		CORS( URL_BASE+url, "entrar", errorConn, usr );
+		AJAX( "entrar", entrar, errorConn, usr );
 	}
 })
 
 function entrar( datos ) {
-
 	if( datos.success == true ){
 		usuario = datos.datos[0];
 		switch(usuario.co_rol){

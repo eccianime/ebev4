@@ -1,0 +1,43 @@
+<section data-role="page" id="adm_ptousr" data-theme="c" data-fullscreen=true>
+	<h1 class="text-center"><img src="../../img/adm_usr_2.png" width="40%"></h1>
+	<h1 class="text-center">Asignación de Usuario a Punto</h1>
+
+	<div data-role="content" class="contenido-centrado">
+		<div class="caja">
+			<div class="row middle-xs">
+				<div class="col-xs-6">
+					<div class="box">
+						<select name="select_usuarios">
+							<option value="">Usuario</option>
+						</select>
+						<input type="text" name=co_usuario readonly="true" placeholder="ID Usuario"> 
+						<input type="text" name=tx_nombres readonly="true" placeholder="Nombres">
+						<input type="text" name=tx_apellidos readonly="true" placeholder="Apellidos">
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="box">
+						<select name="select_sucursal">
+							<option value="">Punto</option>
+						</select>
+						<input type="text" name=co_sucursal readonly="true" placeholder="ID Sucursal"> 
+						<input type="text" name=tx_sucursal readonly="true" placeholder="Nombre del Punto"> 
+						<input type="text" name=tx_direccion_suc readonly="true" placeholder="Dirección"> 
+					</div>
+				</div>
+			</div>
+			<a data-role="button" class="boton-verde" href="#" onclick="linkUsuarioSucursal()">Guardar</a>
+		</div>
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+		</div>
+	</div>
+	<script src="../../js/admin/adm_ptousr.js" ></script>
+</section>

@@ -1,0 +1,60 @@
+<section data-role="page" id="suc_edt" data-theme="c" data-fullscreen=true>
+	<h1 class="text-center"><img src="../../img/logo.png" width="40%"></h1>
+	<h1 class="text-center">Detalles de Sucursal <span data-nombre-sucursal></span></h1>
+
+	<div data-role="content" class="contenido-centrado">
+		<div class="caja">
+			<div class="row middle-xs text-right">
+				<div class="col-xs-4"><div class="box"><label>ID:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="co_sucursal" readonly="true">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Nombre:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_sucursal">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Teléfono:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_tlf_suc">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Ubicación:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="nu_lat_lng">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Dirección:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_direccion_suc">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Creada el:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="fe_creado" readonly="true">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Aprobada el:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="fe_aprobado" readonly="true">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Creado por:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="co_creado_por" readonly="true">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Arobada por:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="co_aprobado_por" readonly="true">
+				</div></div>
+				<a data-role="button" class="boton-verde" href="#" onclick="editarSucursal()">Guardar</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+		</div>
+	</div>
+	<script src="../../js/admin/suc_det.js" ></script>
+	<script src="../../js/admin/suc_edt.js" ></script>
+</section>

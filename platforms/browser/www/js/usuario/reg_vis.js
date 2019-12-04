@@ -1,4 +1,4 @@
-CORS( URL_BASE+"?accion=verEmpresaSucursal", "llenarEmpresaSucursal", errorConn, usuario );
+AJAX( "verEmpresaSucursal", llenarEmpresaSucursal, errorConn, usuario );
 
 $("[type=file]").change(function() {
 	var v = $(this).prop("files")[0]['name'];
@@ -39,7 +39,7 @@ function registroVis() {
 
 		$.ajax({
 			type: 'post',
-			url: URL_BASE+"?accion=registroLibroVis",
+			url: URL_BASE+"registroLibroVis",
 			contentType: false,
 			enctype: 'multipart/form-data',
 			processData: false,

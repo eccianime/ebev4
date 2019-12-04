@@ -21,4 +21,5 @@
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="KeepRunning" value="true" />
 </widget>

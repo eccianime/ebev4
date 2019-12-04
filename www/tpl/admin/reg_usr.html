@@ -1,0 +1,56 @@
+<section data-role="page" id="reg_usr" data-theme="c" data-fullscreen=true>
+	<h1 class="text-center"><img src="../../img/adm_usr_2.png" width="40%"></h1>
+	<h3 class="text-center">Registro de Usuario</h3>
+	
+	<div data-role="content" class="contenido-centrado">
+		<div class="row center-xs">
+			<div class="col-xs-6"><div class="box">
+				<input type="text" name="tx_cedula" placeholder="Céd. Identidad">
+			</div></div>
+			<div class="col-xs-6"><div class="box">
+				<input type="text" name="tx_nick" placeholder="Nick">
+			</div></div>
+			<div class="col-xs-12"><div class="box">
+				<input type="text" name="tx_nombre" placeholder="Primer Nombre">
+			</div></div>
+			<div class="col-xs-12"><div class="box">
+				<input type="text" name="tx_nombre_2" placeholder="Segundo Nombre">
+			</div></div>
+			<div class="col-xs-12"><div class="box">
+				<input type="text" name="tx_apellido" placeholder="Primer Apellido">
+			</div></div>
+			<div class="col-xs-12"><div class="box">
+				<input type="text" name="tx_apellido_2" placeholder="Segundo Apellido">
+			</div></div>
+			<div class="col-xs-12"><div class="box">
+				<input type="text" name="tx_email" placeholder="Correo Electrónico">
+			</div></div>
+			<div class="col-xs-12"><div class="box">
+				<select name="co_rol">
+					<option value="">Tipo de Usuario</option>
+					<option value=1>Super Usuario</option>
+					<option value=2>Administrador</option>
+					<option value=3>Usuario</option>
+				</select>
+			</div></div>
+			<div class="col-xs-12"><div class="box">
+				<select name="co_org">
+					<option value="">Asignar Punto</option>
+				</select>
+			</div></div>
+		</div>
+		<a data-role="button" class="boton-verde" onclick="registroUsr()" href="#">Ingresar</a>
+		<a data-role="button" class="boton-verde" onclick="resetRegistroUsr()" href="#">Resetear</a>
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+		</div>
+	</div>
+	<script src="../../js/admin/reg_usr.js" ></script>
+</section>

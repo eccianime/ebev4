@@ -1,4 +1,4 @@
-$("[name=tx_nombre]").val( usuario.tx_nombre );
+$("[name=tx_nombre]").val( usuario.tx_nombre + " " + usuario.tx_apellido );
 $("[name=tx_nick]").val( usuario.tx_nick );
 $("[name=co_usuario]").val( usuario.co_usuario );
 
@@ -19,6 +19,6 @@ function actulizarPass() {
 			tx_pass: pass.tx_pass_nueva
 		}
 
-		CORS( URL_BASE+"?accion=cambiarPass", "rspBase", errorConn, usr );
+		AJAX( "cambiarPass", rspBase, errorConn, usr );
 	}
 }

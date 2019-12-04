@@ -1,16 +1,24 @@
 <section data-role="page" id="notas" data-theme="c" data-fullscreen=true>
 	<h1 class="text-center"><img src="../../img/logo.png" width="40%"></h1>
-	<h1 class="text-center">Notas</h1>
+	<h1 class="text-center">Agregar Nota</h1>
 	
-	<div data-role="content">
-		<div class="ui-field-contain">
-        	<textarea name="tx_descripcion" placeholder="Contenido..."></textarea>
-    	</div>
-		<input type="file" name="tx_adjunto" class="camp-var">
-		<input type="text" name="nu_lat_lng" class="camp-var">
-		<label class="label-extra tx_adjunto-2"><i class="fa fa-camera color-black"></i> Adjuntar Imagen</label>
-		<label class="label-extra nu_lat_lng-2"><i class="fa fa-map color-black"></i> Ubicación</label>
-		<a data-role="button" class="boton-verde" href="#">Enviar</a>
+	<div data-role="content" class="contenido-centrado">
+		<form class="caja" action="#" enctype="multipart/form-data">
+			<div class="ui-field-contain">
+	        	<textarea name="tx_descripcion" placeholder="Contenido..."></textarea>
+	    	</div>
+	    	<div class="input-agrupado">
+	    		<span class="fa fa-camera"></span>
+	    		<input type="file" name="tx_adjunto" id=tx_adjunto style="display: none" accept="image/*">
+	    		<label for="tx_adjunto">Adjuntar Imagen</label>
+	    	</div>
+	    	<div class="input-agrupado">
+	    		<span class="fa fa-map"></span>
+	    		<input type="text" name="nu_lat_lng" readonly="true" placeholder="Ubicación">
+	    	</div>
+	    	<input type="text" data-co_sucursal style="display: none;">
+			<a data-role="button" class="boton-verde" href="#" onclick="registroNota()">Enviar</a>
+		</form>
 	</div>
 	
 	<div data-role="footer" class="menu-footer" data-position=fixed>

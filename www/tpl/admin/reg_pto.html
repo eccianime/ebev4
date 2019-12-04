@@ -1,0 +1,33 @@
+<section data-role="page" id="reg_pto" data-theme="c" data-fullscreen=true>
+	<h1 class="text-center"><img src="../../img/logo.png" width="40%"></h1>
+	<h1 class="text-center">Registro de Sucursal</h1>
+
+	<div data-role="content" class="contenido-centrado">
+		<div class="caja">
+	    	<input type="text" name="tx_sucursal" placeholder="Nombre de Punto">
+	    	<input type="text" name="tx_tlf_suc" placeholder="Teléfono de Punto">
+	    	<div class="ui-field-contain">
+	        	<textarea name="tx_direccion_suc" placeholder="Dirección del Punto"></textarea>
+	    	</div>
+	    	<div class="input-agrupado">
+	    		<span class="fa fa-map"></span>
+	    		<input type="text" name="nu_lat_lng" readonly="true" placeholder="Ubicación">
+	    	</div>
+	    	<input type="text" data-co_empresa style="display: none;">
+			<a data-role="button" class="boton-verde" href="#" onclick="registroSucursal()">Enviar</a>
+		</div>
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/libro.png"></a>
+			</div></div>
+		</div>
+	</div>
+	<script src="../../js/admin/reg_pto.js" ></script>
+</section>

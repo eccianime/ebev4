@@ -1,5 +1,21 @@
 function onBodyLoad() {
 	document.addEventListener("deviceready", PGcargado, false);
+	document.addEventListener("backbutton", botonAtras, false);
+}
+
+function botonAtras( e ) {
+	e.preventDefault();
+	if( $('.ui-page-active').attr("id") == "home" ){
+		if( $( '#modalSalir-popup' ).hasClass( 'ui-popup-active' ) ){
+			window.history.back();
+		}else{
+			abrirModalSalir();	
+		}
+	}
+}
+
+function SalirApp() {
+	navigator.app.exitApp();	
 }
 
 function PGcargado(){
@@ -12,14 +28,11 @@ function PGcargado(){
 	$.mobile.pageLoadErrorMessageTheme = "b";
 	$.mobile.pageLoadErrorMessageTheme = "b";
 
-	$.support.cors = true;
-	$.mobile.allowCrossDomainPages = true;
-	$.mobile.pushState = false;
-
 	$("#modalGeneral").popup();
+	$("#modalSalir").popup();
 
 	setTimeout( function () {
-		$(".splash").fadeOut().remove();
+		$(".splash").fadeOut();
 	}, 3000);
 
 	setInterval( function () {
@@ -37,7 +50,7 @@ function PGcargado(){
 
 var usuario = {};
 //const URL_BASE = "http://appevt.zz.com.ve/webservice.php";
-const URL_BASE = "http://localhost/ebetracking/webservice.php";
+const URL_BASE = "http://localhost/ebetracking/webservice.php?accion=";
 
 function abrirModal( nro, mensaje, regresar = null ) {
 	var color = nro == 1 ? "rgb(213,14,33)" : ( nro == 2 ? "rgb(90,177,20)" : "rgb(255,168,0)" ) ;
@@ -59,6 +72,12 @@ function abrirModal( nro, mensaje, regresar = null ) {
 	$("#modalGeneral").popup("open");
 }
 
+function abrirModalSalir() {
+	$(".ui-popup.ui-body-inherit").css({backgroundColor:"rgb(255,168,0)"});
+	$(".ui-popup .ui-btn").css({backgroundColor:"rgb(255,168,0)"});
+	$("#modalSalir").popup("open");
+}
+
 function mostrarCargando() {
 	var loading = "<div class='splash mid-transp'></div>";
 	$('[data-role=page]').append(loading);
@@ -68,14 +87,12 @@ function quitarCargando() {
 	$(".splash").remove();
 }
 
-function CORS ( url, respuesta, error, datos) {
+function AJAX( url, respuesta, error, datos ) {
 	mostrarCargando();
 	$.ajax({
-		type: "GET",
-		url: url,
-		dataType: "jsonp",
-		crossDomain: true,
-		jsonpCallback: respuesta,
+		type: "POST",
+		url: URL_BASE+url,
+		success: respuesta,
 		error: error,
 		data: datos,
 	}).done(function () {
@@ -88,17 +105,30 @@ function rspBase( datos ) {
 }
 
 function errorConn() {
-	$(".splash").remove();
+	quitarCargando();
 	abrirModal( 1, "Disculpe, hubo un error al conectar. Intente nuevamente o contacte al administrador del sistema." );
 }
 
 function obtenerUbicacion( quien_ocultar, name_campo ) {
 	$(quien_ocultar).append( "<div class=overlay><span style=padding-top:80px>Cargando Ubicación...</span></div>" );
-	navigator.geolocation.getCurrentPosition( exito, error );
+	navigator.geolocation.getCurrentPosition( exito, error, {enableHighAccuracy: true} );
 
 	function exito ( pos ) {
-		$(name_campo).val( pos.coords.latitude + "/" + pos.coords.longitude );
-		$(".overlay").remove();
+		$.get("https://www.mapquestapi.com/geocoding/v1/reverse?key=D55slb0Kizl6iK3HMIYHZJQwATmGPbDx&location="
+			+pos.coords.latitude+","+pos.coords.longitude, function( data ) {
+				var r = data.results[0].locations[0];
+				$(name_campo)
+					.closest(".caja")
+					.find("[name=tx_direccion_suc]")
+					.val( r.street + ". " + r.adminArea6 + ". " + r.adminArea5+ ". " + r.adminArea3 );
+		});
+		$(name_campo).val( pos.coords.latitude + "," + pos.coords.longitude );
+		$(name_campo)
+			.closest('.input-agrupado')
+			.after( "<img class='mapa-fijo img-responsive' src=https://www.mapquestapi.com/staticmap/v5/map?key=D55slb0Kizl6iK3HMIYHZJQwATmGPbDx&center="
+				+pos.coords.latitude+","+pos.coords.longitude+"&zoom=17&locations="
+				+pos.coords.latitude+","+pos.coords.longitude+">" );
+		$(".overlay").remove();	
 	};
 
 	function error (error) {

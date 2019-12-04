@@ -1,5 +1,5 @@
-CORS( URL_BASE+"?accion=verEmpresaSucursal", "llenarEmpresaSucursal", errorConn, usuario );
-CORS( URL_BASE+"?accion=verLibroVis", "vistaVis", errorConn, usuario );
+AJAX( "verEmpresaSucursal", llenarEmpresaSucursal, errorConn, usuario );
+AJAX( "verLibroVis", vistaVis, errorConn, usuario );
 
 function vistaVis( datos ) {
 	if( datos.filas == 0 ){

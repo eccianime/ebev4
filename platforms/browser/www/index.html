@@ -17,7 +17,7 @@
 	<link rel="apple-touch-icon" href="img/favicon.png">
 	<link rel="icon" type="image/png" href="img/favicon.png">
 
-	<script src="js/lib/jquery.js"></script>
+	<script src="js/lib/jquery.min.js"></script>
 	<script src="cordova.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
@@ -33,8 +33,24 @@
 			<a href="#" id=botonAtrasModal class="ui-btn ui-btn-raised ui-btn-inline boton-verde" data-rel=back role="button"><i class="fa fa-ok"></i> Volver</a>
 		</div>
 	</section>
+	<section data-role="popup" data-close-btn="none" id=modalSalir data-transition=pop data-dismissible="false">
+		<div data-role="header">
+			<h1 class="titulo-blanco"><i class='fa fa-warning'></i> ¿Quieres Salir?</h1>
+		</div>
+		<div class="ui-content text-center">
+			<p>¿Estás seguro que quieres salir de la aplicación?</p>
+			<div class="row center-xs">
+				<div class="col-xs-6"><div class="box">
+					<a href="#" onclick="SalirApp()" class="ui-btn ui-btn-raised ui-btn-inline boton-verde w50p" role="button"><i class="fa fa-ok"></i> Salir</a>		
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<a href="#" class="ui-btn ui-btn-raised ui-btn-inline boton-verde w50p" data-rel=back role="button"><i class="fa fa-ok"></i> Volver</a>		
+				</div></div>
+			</div>
+		</div>
+	</section>
 	<section data-role="page" id="home" data-theme="c" data-fullscreen=true>
-        <!-- <div class='splash'></div> -->
+        <div class='splash'></div>
 		<div data-role="header" data-position=fixed>
 			<img class="pngs" src="img/cabeza.png" width="100%">
 		</div>
