@@ -49,8 +49,8 @@ function PGcargado(){
 }
 
 var usuario = {};
-//const URL_BASE = "http://appevt.zz.com.ve/webservice.php";
-const URL_BASE = "http://localhost/ebetracking/webservice.php?accion=";
+const URL_BASE = "http://appevt.zz.com.ve/webservice.php?accion=";
+//const URL_BASE = "http://localhost/ebetracking/webservice.php?accion=";
 
 function abrirModal( nro, mensaje, regresar = null ) {
 	var color = nro == 1 ? "rgb(213,14,33)" : ( nro == 2 ? "rgb(90,177,20)" : "rgb(255,168,0)" ) ;
