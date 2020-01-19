@@ -3,7 +3,7 @@
 	<h1 class="text-center">Reportes</h1>
 	
 	<div data-role="content">
-		<div class="row center-xs">
+		<div class="row center-xs middle-xs campos-reducidos">
 			<div class="col-xs-6"><div class="box">
 				<input type="date" name="desde" placeholder="Desde">
 				<label class="calendario"><i class="fa fa-calendar"></i></label>
@@ -12,53 +12,29 @@
 				<input type="date" name="hasta" placeholder="Hasta">
 				<label class="calendario"><i class="fa fa-calendar"></i></label>
 			</div></div>
-			<div class="col-xs-6"><div class="box">
+			<div class="col-xs-4"><div class="box">
 				<label>Palabra Clave</label>
+			</div></div>
+			<div class="col-xs-5"><div class="box">
 				<input type="text" name="tx_palabra_clave">
 			</div></div>
-			<div class="col-xs-6"><div class="box">
+			<div class="col-xs-1"><div class="box">
 				<label>ID</label>
-				<input type="text" name="co_registro">
+			</div></div>
+			<div class="col-xs-2"><div class="box">
+				<input type="text" name="co_libro_bit">
 			</div></div>
 		</div>
 		<br>
-		<ul data-role="listview" class="bitacora">
-			<li data-icon=plus><a href="#">
-				<span class="negrita">FECHA: XX-XX-XXXX <br>
-				NOVEDAD: 0000<br>
-				HORA: 00:00 <br><br></span>
-				xxxxx xxxx xxxx xxxx xxxxx xxxxx xxxxxx
-
-			</a></li>
-			<li data-icon=plus><a href="#">
-				<span class="negrita">FECHA: XX-XX-XXXX <br>
-				NOVEDAD: 0000<br>
-				HORA: 00:00 <br><br></span>
-				xxxxx xxxx xxxx xxxx xxxxx xxxxx xxxxxx
-
-			</a></li>
-			<li data-icon=plus><a href="#">
-				<span class="negrita">FECHA: XX-XX-XXXX <br>
-				NOVEDAD: 0000<br>
-				HORA: 00:00 <br><br></span>
-				xxxxx xxxx xxxx xxxx xxxxx xxxxx xxxxxx
-
-			</a></li>
-			<li data-icon=plus><a href="#">
-				<span class="negrita">FECHA: XX-XX-XXXX <br>
-				NOVEDAD: 0000<br>
-				HORA: 00:00 <br><br></span>
-				xxxxx xxxx xxxx xxxx xxxxx xxxxx xxxxxx
-
-			</a></li>
-			<li data-icon=plus><a href="#">
-				<span class="negrita">FECHA: XX-XX-XXXX <br>
-				NOVEDAD: 0000<br>
-				HORA: 00:00 <br><br></span>
-				xxxxx xxxx xxxx xxxx xxxxx xxxxx xxxxxx
-
-			</a></li>
-		</ul>
+		<div class="caja-lista">
+			<ul data-role="listview" data-inset=true class="bitacora">
+				<li><a class='ui-btn lista-centrado' href=#>
+				<span class='negrita'><br>
+					INTENTE CAMBIAR UN PARÁMETRO ARRIBA<br>
+					<br></span>
+				</a></li>
+			</ul>
+		</div>
 		<br>
 	</div>
 	
@@ -69,7 +45,7 @@
 			</div></div>
 			<div class="col-xs-4"><div class="box"></div></div>
 			<div class="col-xs-4"><div class="box">
-				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/libro.png"></a>
+				<a href="#" imprimir><img class="img-menu-inf" src="../../img/libro.png"></a>
 			</div></div>
 		</div>
 	</div>

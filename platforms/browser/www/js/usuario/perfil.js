@@ -1,6 +1,8 @@
-$("[name=tx_nombre]").val( usuario.tx_nombre + " " + usuario.tx_apellido );
-$("[name=tx_nick]").val( usuario.tx_nick );
-$("[name=co_usuario]").val( usuario.co_usuario );
+$(function() {
+	$("[name=tx_nombre]").val( usuario.tx_nombre + " " + usuario.tx_apellido );
+	$("[name=tx_nick]").val( usuario.tx_nick );
+	$("[name=co_usuario]").val( usuario.co_usuario );
+})
 
 function actulizarPass() {
 	var pass = {

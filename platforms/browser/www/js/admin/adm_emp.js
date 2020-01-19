@@ -1,11 +1,12 @@
-AJAX( "verEmpresaDetalle", verEmpresaDetalleRSP, errorConn, usuario );
+$(function() {
+	AJAX( "verEmpresaDetalle", verEmpresaDetalleRSP, errorConn, usuario );
+})
 
 function verEmpresaDetalleRSP( xhr ) {
 	$.each( xhr.datos, function( i ) {
 		$("[name="+i+"]").val( xhr.datos[i] );
 	} )
 }
-
 
 function editarEmpresa() {
 	var datos = {

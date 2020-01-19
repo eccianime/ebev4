@@ -1,9 +1,16 @@
 <section data-role="page" id="rep_asis" data-theme="c" data-fullscreen=true>
-	<h1 class="text-center"><img src="../../img/libro_asis.png" width="40%"></h1>
-	<h3 class="text-center">Empresa: <span id=empresaAsis></span><br>Libro de Asistencias de Empleados</h3>
+	<div class="text-center caja-cabecera">
+		<h1><img src="../../img/libro_asis.png" width="40%"></h1>
+		<h3>Libro de Asistencias de Empleados</h3>
+		<div class="mb-20p">
+			Empresa: <span data-empresa></span><br>
+			Sucursal: <span data-sucursal></span><br>
+			Libro: <span data-nombre-libro></span>
+		</div>
+	</div>
 	
 	<div data-role="content" class="contenido-centrado libros">
-		<div class="row center-xs">
+		<div class="row center-xs middle-xs campos-reducidos">
 			<div class="col-xs-6"><div class="box">
 				<input type="date" name="desde" placeholder="Desde">
 				<label class="calendario"><i class="fa fa-calendar"></i></label>
@@ -12,13 +19,14 @@
 				<input type="date" name="hasta" placeholder="Hasta">
 				<label class="calendario"><i class="fa fa-calendar"></i></label>
 			</div></div>
-			<div class="col-xs-4"><div class="box pt15p">
+			<div class="col-xs-4"><div class="box">
 				<label>Palabra Clave</label>
 			</div></div>
 			<div class="col-xs-8"><div class="box">
 				<input type="text" name="tx_palabra_clave">
 			</div></div>
 		</div>
+		<br>
 
 		<div class="tabla">
 			<table><thead><tr>
@@ -27,12 +35,7 @@
 				<td>Nombre</td>
 				<td>ID - Nick</td>
 			</tr></thead>
-			<tbody><tr>
-				<td>xx-xx-xx</td>
-				<td>xx:xx XM</td>
-				<td>xxxx xxxxxxx</td>
-				<td>xyzxyzxyz</td>
-			</tr></tbody></table>
+			<tbody class="tabla-asis"></tbody></table>
 		</div>
 	</div>
 	
@@ -43,7 +46,7 @@
 			</div></div>
 			<div class="col-xs-4"><div class="box"></div></div>
 			<div class="col-xs-4"><div class="box">
-				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/buscar.png"></a>
+				<a data-imprimir href="#"><img class="img-menu-inf" src="../../img/libro.png"></a>
 			</div></div>
 		</div>
 	</div>

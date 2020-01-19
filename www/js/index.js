@@ -49,8 +49,10 @@ function PGcargado(){
 }
 
 var usuario = {};
-const URL_BASE = "http://appevt.zz.com.ve/webservice.php?accion=";
-//const URL_BASE = "http://localhost/ebetracking/webservice.php?accion=";
+//const SITIO_WEB = "http://appevt.zz.com.ve/";
+const SITIO_WEB = "http://localhost/ebetracking/";
+
+const URL_BASE = SITIO_WEB+"webservice.php?accion=";
 
 function abrirModal( nro, mensaje, regresar = null ) {
 	var color = nro == 1 ? "rgb(213,14,33)" : ( nro == 2 ? "rgb(90,177,20)" : "rgb(255,168,0)" ) ;
@@ -110,8 +112,13 @@ function errorConn() {
 }
 
 function obtenerUbicacion( quien_ocultar, name_campo ) {
-	$(quien_ocultar).append( "<div class=overlay><span style=padding-top:80px>Cargando Ubicación...</span></div>" );
-	navigator.geolocation.getCurrentPosition( exito, error, {enableHighAccuracy: true} );
+	//$(quien_ocultar).append( "<div class=overlay><span style=padding-top:80px>Cargando Ubicación...</span></div>" );
+
+	if ("geolocation" in navigator) {
+		navigator.geolocation.getCurrentPosition( exito, error, { enableHighAccuracy: true } );	
+	}else{
+		console.log("NO ESTA DISPONIBLE");
+	}
 
 	function exito ( pos ) {
 		$.get("https://www.mapquestapi.com/geocoding/v1/reverse?key=D55slb0Kizl6iK3HMIYHZJQwATmGPbDx&location="
@@ -128,7 +135,7 @@ function obtenerUbicacion( quien_ocultar, name_campo ) {
 			.after( "<img class='mapa-fijo img-responsive' src=https://www.mapquestapi.com/staticmap/v5/map?key=D55slb0Kizl6iK3HMIYHZJQwATmGPbDx&center="
 				+pos.coords.latitude+","+pos.coords.longitude+"&zoom=17&locations="
 				+pos.coords.latitude+","+pos.coords.longitude+">" );
-		$(".overlay").remove();	
+		//$(".overlay").remove();	
 	};
 
 	function error (error) {

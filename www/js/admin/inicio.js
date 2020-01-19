@@ -1,5 +1,7 @@
 var sexo = usuario.co_sexo == 2 ? "a, " : "o, ";
-$("[data-nick-perfil]").html(sexo+usuario.tx_nombre);
+$(function() {
+	$("[data-nick-perfil]").html(sexo+usuario.tx_nombre);
+})
 
 function llenarEmpresaSola( datos ) {
 	var obj 		= datos.datos[0],

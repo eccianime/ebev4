@@ -1,4 +1,16 @@
-AJAX( "verSucursales", vistaRegUsr, errorConn, usuario );
+$(function() {	
+	AJAX( "verSucursales", vistaRegUsr, errorConn, usuario );
+	
+	$("[name=co_rol]").bind('change', function() {
+		var rol = $(this).find(':selected').attr('value');
+		if( rol == 1 || rol == 2 ){
+			$('[name=co_org]' ).closest( '.ui-select' ).addClass( 'ui-disabled' );
+		}else{
+			$('[name=co_org]' ).closest( '.ui-select' ).removeClass( 'ui-disabled' );
+		}
+	})
+
+})	
 
 function vistaRegUsr( datos ) {
 	if( datos.filas > 0 ){
@@ -10,15 +22,6 @@ function vistaRegUsr( datos ) {
 		$('[name=co_org]').append(html);
 	}
 }
-
-$("[name=co_rol]").bind('change', function() {
-	var rol = $(this).find(':selected').attr('value');
-	if( rol == 1 || rol == 2 ){
-		$('.ui-page-active [name=co_org]' ).closest( '.ui-select' ).addClass( 'ui-disabled' );
-	}else{
-		$('.ui-page-active [name=co_org]' ).closest( '.ui-select' ).removeClass( 'ui-disabled' );
-	}
-})
 
 function registroUsr() {
 	var data = {

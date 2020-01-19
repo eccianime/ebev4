@@ -1,5 +1,7 @@
-AJAX( "verEmpresaSola", llenarEmpresaSola, errorConn, usuario );
-obtenerUbicacion( ".caja", ".ui-page-active [name=nu_lat_lng]" );
+$(function() {
+	AJAX( "verEmpresaSola", llenarEmpresaSola, errorConn, usuario );
+	obtenerUbicacion( ".caja", ".ui-page-active [name=nu_lat_lng]" );
+})
 
 function registroSucursal() {
 

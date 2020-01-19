@@ -279,7 +279,7 @@ input[type=date]{
 	padding-left: 20px;	
 }
 
-#reportes input, #repasis input, #repvis input{
+#reportes input, #rep_asis input, #rep_asis input{
 	background-color: white;
 	border-bottom: 3px solid rgb(242,242,242);
 	border-bottom-right-radius: 0px;
@@ -310,6 +310,14 @@ input[type=date]{
 
 .negrita{
 	font-weight: bold;
+}
+
+.notepases{
+	max-width: 50%;
+	display: inline-block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .libros thead, .usuarios thead{
@@ -434,7 +442,12 @@ label{
 	border-radius: .3125em;
 }
 
-.tabla-vis td, .tabla-asis td, .tabla-usr td {
+.tabla-vis td,
+.tabla-asis td,
+.tabla-usr td,
+.tabla-lib-asi td,
+.tabla-lib-vis td,
+.tabla-lib-ebe td{
 	white-space: nowrap;
 }
 
@@ -454,20 +467,22 @@ canvas{
 
 }
 
-#inicioAdmin .img-responsive{
+#inicioAdmin .img-responsive,
+#inicioSuper .img-responsive,
+#emp_inicio .img-responsive{
 	width: 110%;
 	margin: 10px -5px;
 }
 
-.ui-listview.sucursales{
+.ui-listview.sucursales, .ui-listview.empresas{
 	margin: .5em;
 }
 
-.ui-listview.sucursales li:nth-child(2n){
+.ui-listview.sucursales li:nth-child(2n), .ui-listview.empresas li:nth-child(2n){
 	background-color: white;
 }
 
-.ui-listview.sucursales > li > a.ui-btn{
+.ui-listview.sucursales > li > a.ui-btn, .ui-listview.empresas > li > a.ui-btn{
 	font-size: .9em;
 }
 
@@ -502,11 +517,12 @@ canvas{
 	text-align: right;
 }
 
-#adm_emp .box,
-#reg_usr .box,
-#suc_det .box,
-#suc_edt .box,
-#perfilUsuario .box{
+.text-justify{
+	text-align: justify;
+}
+
+.campos-reducidos .box{
 	margin-top: -5px;
 	margin-bottom: -5px;
 }
+

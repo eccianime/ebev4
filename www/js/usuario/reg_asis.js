@@ -1,11 +1,5 @@
-AJAX( "verEmpresaSucursal", llenarEmpresaSucursal, errorConn, usuario );
-
-$("[type=file]").change(function() {
-	var v = $(this).prop("files")[0]['name'];
-	var n = $(this).attr("name");
-
-	$("label[for="+n+"]").html(v);
-	$("label[for="+n+"]").css({color:"black", wordBreak: "break-all"});
+$(function(){
+	AJAX( "verEmpresaSucursal", llenarEmpresaSucursal, errorConn, usuario );
 })
 
 function buscarUsuario() {
@@ -36,41 +30,17 @@ function llenarUsuario( datos ) {
 }
 
 function registroAsis() {
-	if( $("[name=tx_nick]").val() == "" ||
-		$("[name=tx_nombre]").val() == "" || 
-		$("[name=tx_nombre_2]").val() == "" ||
-		$("[name=tx_nombre_2]").val() == "" ||
-		$("[name=tx_nombre_2]").val() == "" ||
-		$("[name=url_img_firma]").val() == "" ){
+	if( $("[name=co_usuario]").val() == ""
+	 || $("[name=tx_nombre]").val() == "" ){
 		abrirModal( 1, "Por favor, no deje campos vacíos..." );
 	}else{
-		mostrarCargando();
+		var datos = {
+			co_usuario: $("[name=co_usuario]").val(),
+			co_sucursal: $("[data-co_sucursal]").val(),
+			url_img_firma: $(".ui-page-active [name=lienzo]")[0].toDataURL(),
+			co_creado_por: usuario.co_usuario,
+		}
 
-		var fd = new FormData();
-		var file1 = $('[name=url_img_firma]')[0].files[0]; 
-        fd.append('archivo', file1);
-
-        fd.append( 'co_usuario', $("[name=co_usuario]").val() );
-		fd.append( 'co_sucursal', $("[data-co_sucursal]").val() );
-        fd.append( 'co_creado_por', usuario.co_usuario);
-
-		$.ajax({
-			type: 'post',
-			url: URL_BASE+"registroLibroAsis",
-			contentType: false,
-			enctype: 'multipart/form-data',
-			processData: false,
-			cache: false,
-			data: fd,
-			complete: function ( xhr, status ) {
-				var resp = $.parseJSON( xhr.responseText );
-				quitarCargando();
-				if( resp.success == true ){
-					abrirModal(2, "Se realizó el registro de forma exitósa.", 1);
-				}else{
-					abrirModal(2, "Ocurrió un problema, informe al administrador el CODIGO ERR0003");
-				}
-			},
-		});
+		AJAX( "registroLibroAsis", rspBase, errorConn, datos );
 	}
 }

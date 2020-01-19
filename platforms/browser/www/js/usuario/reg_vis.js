@@ -1,11 +1,13 @@
-AJAX( "verEmpresaSucursal", llenarEmpresaSucursal, errorConn, usuario );
+$(function() {
+	AJAX( "verEmpresaSucursal", llenarEmpresaSucursal, errorConn, usuario );
 
-$("[type=file]").change(function() {
-	var v = $(this).prop("files")[0]['name'];
-	var n = $(this).attr("name");
+	$("[type=file]").change(function() {
+		var v = $(this).prop("files")[0]['name'];
+		var n = $(this).attr("name");
 
-	$("label[for="+n+"]").html(v);
-	$("label[for="+n+"]").css({color:"black", wordBreak: "break-all"});
+		$("label[for="+n+"]").html(v);
+		$("label[for="+n+"]").css({color:"black", wordBreak: "break-all"});
+	})
 })
 
 function registroVis() {

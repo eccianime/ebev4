@@ -1,0 +1,70 @@
+<section data-role="page" id="usr_edt" data-theme="c" data-fullscreen=true>
+	<div class="text-center caja-cabecera">
+		<h1><img src="../../img/adm_usr_2.png" width="40%"></h1>
+		<div class="mb-20p"><h3>Modificar Usuario</h3></div>
+	</div>
+	
+	<div data-role="content" class="contenido-centrado usuarios">
+		<div class="caja">
+			<div class="row middle-xs text-justify campos-reducidos">
+				<div class="col-xs-4"><div class="box"><label>ID:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="co_usuario" readonly="true">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Cédula:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_cedula">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>P. Nombre:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_nombre">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>S. Nombre:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_nombre_2">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>P. Apellido:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_apellido">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>S. Apellido:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_apellido_2">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Email:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_email" readonly="true">
+				</div></div>
+				<div class="col-xs-4"><div class="box"><label>Nick:</label></div></div>
+				<div class="col-xs-8"><div class="box">
+					<input type="text" name="tx_nick" readonly="true">
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<select name="co_rol">
+						<option value="">Tipo</option>
+						<option value=2>Administrador</option>
+						<option value=3>Usuario</option>
+					</select>
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<select name="co_org">
+						<option value="">Punto</option>
+					</select>
+				</div></div>
+				<a data-role="button" class="boton-verde" href="#" onclick="editarUsuario()">Guardar</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+		</div>
+	</div>
+	<script src="../../js/admin/usr_det.js" ></script>
+	<script src="../../js/admin/usr_edt.js" ></script>
+</section>

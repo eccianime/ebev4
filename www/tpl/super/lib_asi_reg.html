@@ -1,0 +1,45 @@
+<section data-role="page" id="lib_asi_reg" data-theme="c" data-fullscreen=true>
+	<div data-role="header" class="caja-cabecera" data-position=fixed>
+		<h1><img src="../../img/saisa_blanco.png" width="100%"></h1>
+		<img class="pngs sin_mt" src="../../img/cabeza.png" width="100%">
+	</div>
+	
+	<div data-role="content" class="contenido-centrado">
+		<h1 class="text-center"><img src="../../img/libroasis.png" style="width: 35%; padding-top: 20px;"></h1>
+		<p class="negrita">NUEVO LIBRO DE ASISTENCIA</p>
+		
+		<div class="caja">
+			<div class="row middle-xs text-right campos-reducidos">
+				<div class="col-xs-6"><div class="box"><label>Empresa:</label></div></div>
+				<div class="col-xs-6"><div class="box">
+					<input type="hidden" name="co_tipo" readonly=true value="2">
+					<input type="text" name="tx_empresa" readonly=true>
+				</div></div>
+				<div class="col-xs-6"><div class="box"><label>Nombre del Libro:</label></div></div>
+				<div class="col-xs-6"><div class="box">
+					<input type="text" name="tx_nombre">
+				</div></div>
+				<div class="col-xs-6"><div class="box"><label>Seleccione el Punto:</label></div></div>
+				<div class="col-xs-6"><div class="box">
+					<select name="select_sucursal">
+						<option value="">Punto</option>
+					</select>
+				</div></div>
+				
+			</div>
+			<a data-role="button" class="boton-verde" href="#" onclick="registrarLibro()">Guardar</a>
+		</div>
+
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+		</div>
+	</div>
+	<script src="../../js/super/lib_reg.js" ></script>
+</section>

@@ -1,7 +1,9 @@
-var sucursal;
+var sucursal = {};
 
-AJAX( "verEmpresaSola", llenarEmpresaSola, errorConn, usuario );
-AJAX( "verSucursales", vistaAdmPto, errorConn, usuario );
+$(function() {
+	AJAX( "verEmpresaSola", llenarEmpresaSola, errorConn, usuario );
+	AJAX( "verSucursales", vistaAdmPto, errorConn, usuario );
+})
 
 function vistaAdmPto( datos ) {
 	if( datos.filas == 0 ){
@@ -12,7 +14,7 @@ function vistaAdmPto( datos ) {
 				<br></span>\
 			</a></li>\
 		";
-		$(".ui-page-active .sucursales").append(html);		
+		$(".sucursales").append(html);		
 	}else{	
 		var altos = {
 			a: parseInt( $(".ui-page-active").css('height') ),
@@ -48,4 +50,4 @@ function editarSucursal( id ) {
 
 function borrarSucursal( id ) {
 	sucursal = { co_sucursal: id };
-}
+}	

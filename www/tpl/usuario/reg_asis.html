@@ -14,12 +14,12 @@
 		<input type="text" name="tx_apellido" placeholder="Primer Apellido" readonly>
 		<input type="text" name="tx_apellido_2" placeholder="Segundo Apellido" readonly>
 		<input type="text" name="tx_cedula" placeholder="Ced. Identidad" readonly>
-		<label for="url_img_firma">Imagen de Firma</label>
-		<input type="file" name="url_img_firma" id="url_img_firma" style="display: none" placeholder="Firma o Recibido" accept="image/*">
+		<p>Por favor, registre su firma en el siguiente cuadro.</p>
+	    <canvas width="300px" height="300px" name=lienzo></canvas>
     	<input type="text" data-co_sucursal style="display: none;">
 		<input type="text" name="co_usuario" style="display: none;">
 		<a data-role="button" class="boton-verde" href="#" onclick="registroAsis()">Ingresar</a>
-		<a data-role="button" class="boton-verde" href="#" onclick="resetCampos()">Resetear</a>
+		<a data-role="button" class="boton-verde" href="#" limpiar-canvas onclick="resetCampos()">Resetear</a>
 	</div>
 	
 	<div data-role="footer" class="menu-footer" data-position=fixed>
@@ -34,4 +34,5 @@
 		</div>
 	</div>
 	<script src="../../js/usuario/reg_asis.js" ></script>
+	<script src="../../js/lib/firma.js" ></script>
 </section>

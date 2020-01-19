@@ -1,0 +1,44 @@
+<section data-role="page" id="sup_adm" data-theme="c" data-fullscreen=true>
+	<div class="text-center caja-cabecera">
+		<h1><img src="../../img/saisa.png" width="40%"></h1>
+		<div class="mb-20p"><h3>Lista de SuperUsuarios y Administradores</h3></div>
+	</div>
+	
+	<div data-role="content" class="contenido-centrado usuarios">
+		<div class="caja">
+			<div class="row middle-xs text-right campos-reducidos">
+				<div class="col-xs-5"><div class="box"><label>Seleccione Rol:</label></div></div>
+				<div class="col-xs-7"><div class="box">
+					<select name="select_tipo">
+						<option value="1">SuperUsuarios</option>
+						<option value="2">Administradores</option>
+					</select>
+				</div></div>
+				
+			</div>
+		</div>
+		<div class="tabla">
+			<table><thead><tr>
+				<td>ID</td>
+				<td>Nick</td>
+				<td>Nombre</td>
+				<td>C.I.</td>
+				<td>Acción</td>
+			</tr></thead>
+			<tbody class="tabla-usr"></tbody></table>
+		</div>
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="../admin/usr_reg.html"><img class="img-menu-inf" src="../../img/agregar.png"></a>
+			</div></div>
+		</div>
+	</div>
+	<script src="../../js/super/sup_adm.js" ></script>
+</section>
