@@ -49,8 +49,8 @@ function PGcargado(){
 }
 
 var usuario = {};
-const SITIO_WEB = "http://appevt.zz.com.ve/";
-//const SITIO_WEB = "http://localhost/ebetracking/";
+//const SITIO_WEB = "http://appevt.zz.com.ve/";
+const SITIO_WEB = "http://localhost/ebetracking/";
 
 const URL_BASE = SITIO_WEB+"webservice.php?accion=";
 

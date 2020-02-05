@@ -42,12 +42,12 @@ function vistaUsuarios( datos ) {
 
 function usuarioDet( id ) {
 	usr = { co_usuario: id };
-	$.mobile.changePage( "../admin/usr_det.html" );
+	$.mobile.changePage( "../super/usr_det.html" );
 }
 
 function usuarioEdt( id ) {
 	usr = { co_usuario: id };
-	$.mobile.changePage( "../admin/usr_edt.html" );
+	$.mobile.changePage( "../super/usr_edt.html" );
 }
 
 function usuarioDel( id ) {

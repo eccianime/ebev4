@@ -56,7 +56,7 @@ function registrarUsuario() {
 		}else{
 			data["co_creado_por"] = usuario.co_usuario;
 			if( data['co_rol'] == 2 ){
-				data["co_org"] = usuario.co_empresa
+				data["co_org"] = empresa.co_empresa;
 			}else if( data['co_rol'] == 3 ){
 				data["co_org"] = $('[name=co_org] option:selected').attr('value');
 			}

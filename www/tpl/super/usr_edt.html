@@ -1,0 +1,78 @@
+<section data-role="page" id="usr_edt" data-theme="c" data-fullscreen=true>
+	<div class="text-center caja-cabecera">
+		<h1><img src="../../img/adm_usr_2.png" width="40%"></h1>
+		<h3>Crear ADMIN / SUPER-USUARIO</h3>
+	</div>
+	
+	<div data-role="content" class="contenido-centrado usuarios">
+		<div class="caja">
+			<div class="row middle-xs text-justify campos-reducidos">
+				<div class="col-xs-6"><div class="box">
+					<input type="hidden" name="co_usuario" readonly="true">
+					<input type="text" name="tx_cedula" placeholder="Cédula:">
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<input type="text" name="tx_nick" placeholder="Nick:">
+				</div></div>
+				<div class="col-xs-12"><div class="box">
+					<input type="text" name="tx_nombre" placeholder="P. Nombre:">
+				</div></div>
+				<div class="col-xs-12"><div class="box">
+					<input type="text" name="tx_nombre_2" placeholder="S. Nombre:">
+				</div></div>
+				<div class="col-xs-12"><div class="box">
+					<input type="text" name="tx_apellido" placeholder="P. Apellido:">
+				</div></div>
+				<div class="col-xs-12"><div class="box">
+					<input type="text" name="tx_apellido_2" placeholder="S. Apellido:">
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<input type="text" name="tx_email" placeholder="Email:">
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<input type="text" name="tx_tlf" placeholder="Teléfono">
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<input type="date" name="fe_nacimiento" placeholder="Fecha de Nacimiento">
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<select name="co_sexo">
+						<option value="">Sexo</option>
+						<option value=1>Masculino</option>
+						<option value=2>Feminino</option>
+					</select>
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<select name="co_rol" readonly="true">
+						<option value="">Tipo de Usuario</option>
+						<option value=1>Super-Usuario</option>
+						<option value=2>Administrador</option>
+					</select>
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<select name="co_org">
+						<option value="">Empresa</option>
+					</select>
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<input type="password" name="tx_pass" placeholder="Contraseña">
+				</div></div>
+				<div class="col-xs-6"><div class="box">
+					<input type="password" name="tx_pass_2" placeholder="Repita la Contraseña">
+				</div></div>
+				<a data-role="button" class="boton-verde" href="#" onclick="registrarUsuario()">Guardar</a>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="footer" class="menu-footer" data-position=fixed>
+		<div class="row center-xs">
+			<div class="col-xs-4"><div class="box"></div></div>
+			<div class="col-xs-4"><div class="box">
+				<a href="#" data-rel=back><img class="img-menu-inf" src="../../img/atras.png"></a>
+			</div></div>
+			<div class="col-xs-4"><div class="box"></div></div>
+		</div>
+	</div>
+	<script src="../../js/super/usr_edt.js" ></script>
+</section>

@@ -61,5 +61,9 @@ function linkUsuarioSucursal() {
 		co_sucursal: $("[name=co_sucursal]").val(),
 	}
 
-	AJAX( "linkUsuarioSucursal", rspBase, errorConn, datos );
+	if( datos.co_sucursal == "" || datos.co_usuario == "" ){
+		abrirModal( 1, "Disculpe, alguno de los datos faltan para poder enlazar al usuario a la sucursal." );
+	}else{
+		AJAX( "linkUsuarioSucursal", rspBase, errorConn, datos );	
+	}
 }

@@ -5,10 +5,10 @@ $(function() {
 
 function llenarEmpresaSola( datos ) {
 	var obj 		= datos.datos[0],
-		empresa 	= obj['tx_empresa'],
-		sucursal 	= obj['tx_sucursal'],
 		co_empresa 	= obj['co_empresa'],
-		co_sucursal = obj['co_sucursal'];
+		empresa 	= obj['tx_empresa'],
+		co_sucursal = obj['co_sucursal'],
+		sucursal 	= obj['tx_sucursal'];
 
 	$("[data-co_empresa]").val( co_empresa );
 	$("[data-empresa]").html( empresa );

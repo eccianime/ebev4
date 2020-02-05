@@ -27,7 +27,7 @@ function vistaEmpresas( datos ) {
 		$.each( a , function( i ) {
 			html += "<li><a class='ui-btn' href='#'>\
 						<span class='negrita notepases'>"+a[i]['tx_empresa']+"</span>\
-						<span onclick='borrarEmpresa("+a[i]['co_empresa']+")' class='fa fa-trash icono-accion color-rojo'></span>\
+						<span onclick='desactivarEmpresa("+a[i]['co_empresa']+")' class='fa fa-trash icono-accion color-rojo'></span>\
 						<span onclick='editarEmpresa("+a[i]['co_empresa']+")' class='fa fa-pencil icono-accion color-naranja'></span>\
 						<span onclick='verEmpresa("+a[i]['co_empresa']+")' class='fa fa-eye icono-accion color-verde'></span>\
 					</a></li>\
@@ -47,6 +47,7 @@ function editarEmpresa( id ) {
 	$.mobile.changePage( "sup_adm_emp.html" );
 }
 
-function borrarEmpresa( id ) {
+function desactivarEmpresa( id ) {
 	empresa = { co_empresa: id };
+	AJAX( "desactivarEmpresa", rspBase, errorConn, empresa );
 }

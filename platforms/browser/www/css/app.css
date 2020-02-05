@@ -507,6 +507,10 @@ canvas{
 	color: red;
 }
 
+.color-azul{
+	color: rgb(61,123,199);
+}
+
 .icono-accion-tabla{
 	width: 40px;
 	font-size: 25px;
